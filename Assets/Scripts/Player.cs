@@ -10,12 +10,24 @@ public class Player : MonoBehaviour
     public float entradaHorizontal ;
     public float entradaVertical ;
 
+     public int vidas = 5;
+
+     public GerenciadorDeUi _uiGerenciador;
+
     void Start()
     {
         Debug.Log("Start de " + this.name);
         animator = GetComponent<Animator>();
         playerRigidbody2D = GetComponent<Rigidbody2D>();
         float velocidade = 50.0f ;
+
+         _uiGerenciador = GameObject.Find("Canvas").GetComponent<GerenciadorDeUi>();
+        if (_uiGerenciador != null )
+        {
+            Debug.Log("2");
+            _uiGerenciador.AtualizarVidas(vidas);
+
+        }
     }
 
     void Update()
@@ -69,6 +81,20 @@ public class Player : MonoBehaviour
             animator.SetBool("Walk_Right", false);
         }
     }
+
+     public void DanoAoPLayer()
+    {
+        vidas--;
+        _uiGerenciador.AtualizarVidas(vidas);
+
+        if (vidas == 0)
+        {
+            Destroy(this.gameObject);
+        }
+
+    }
+
+
 
 }
 

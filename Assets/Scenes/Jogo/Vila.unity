@@ -6159,6 +6159,8 @@ MonoBehaviour:
   velocidade: 50
   entradaHorizontal: 0
   entradaVertical: 0
+  vidas: 5
+  _uiGerenciador: {fileID: 0}
 --- !u!50 &1276897835
 Rigidbody2D:
   serializedVersion: 4
@@ -7477,7 +7479,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 809219241
   m_SortingLayer: 2
-  m_SortingOrder: 0
+  m_SortingOrder: -1
   m_Sprite: {fileID: 21300000, guid: a869e154a9f802245ac57af775dd9442, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
